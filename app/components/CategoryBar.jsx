@@ -1,8 +1,8 @@
-import React from "react";
-import { View, Text, Image, TouchableOpacity, ScrollView } from "react-native";
-import { useGeneralContext } from "../contexts/GeneralContext";
-import categoryList from "../data/CategoryList";
-import CategoryCard from "./CategoryCard";
+import React from 'react';
+import { View, Text, Image, TouchableOpacity, ScrollView } from 'react-native';
+import { useGeneralContext } from '../contexts/GeneralContext';
+import categoryList from '../data/CategoryList';
+import CategoryCard from './CategoryCard';
 
 const CategoryBar = () => {
   const { tab, setTab } = useGeneralContext();

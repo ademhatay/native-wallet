@@ -1,8 +1,8 @@
-import { View, Text, Image } from "react-native";
-import React from "react";
-import { ScrollView } from "react-native";
-import categoryList from "../data/CategoryList";
-import CategoryCard from "./CategoryCard";
+import { View, Text, Image } from 'react-native';
+import React from 'react';
+import { ScrollView } from 'react-native';
+import categoryList from '../data/CategoryList';
+import CategoryCard from './CategoryCard';
 
 const BottomBar = () => {
   return (

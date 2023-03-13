@@ -1,11 +1,11 @@
-import React, { useContext, createContext, useState } from "react";
+import React, { useContext, createContext, useState } from 'react';
 
 // Create a context
 const Context = createContext();
 
 // Create a provider
 const Provider = ({ children }) => {
-  const [tab, setTab] = useState("coins");
+  const [tab, setTab] = useState('coins');
 
   const data = {
     // Add your values here
@@ -22,7 +22,7 @@ export const useGeneralContext = () => {
   const context = useContext(Context);
 
   if (!context) {
-    throw new Error("useGeneralContext must be used within a Provider");
+    throw new Error('useGeneralContext must be used within a Provider');
   }
 
   return context;

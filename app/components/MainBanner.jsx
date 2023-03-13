@@ -1,5 +1,5 @@
-import { View, Text, Image } from "react-native";
-import React from "react";
+import { View, Text, Image } from 'react-native';
+import React from 'react';
 
 const MainBanner = () => {
   return (
@@ -11,7 +11,7 @@ const MainBanner = () => {
         <View className="items-center">
           <Image
             className="w-20 h-20"
-            source={require("../../assets/wallet.png")}
+            source={require('../../assets/wallet.png')}
           />
           <Text className="text-base">in Wallet</Text>
         </View>

@@ -1,12 +1,12 @@
-import { View, Text } from "react-native";
-import React from "react";
+import { View, Text } from 'react-native';
+import React from 'react';
 import {
   BottomBar,
   CategoryBar,
   Header,
   MainBanner,
   Screen,
-} from "../components";
+} from '../components';
 
 const HomeScreen = () => {
   return (
