@@ -24,6 +24,11 @@ const categoryList = [
     name: 'Gold',
     image: require('../../assets/gold.png'),
   },
+  {
+	id: 6,
+	name: 'Bitcoin',
+	image: require('../../assets/bitcoin.png'),
+  }
 ];
 
 export default categoryList;
