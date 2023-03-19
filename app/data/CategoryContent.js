@@ -1,32 +1,4 @@
 const categoryContent = {
-	"coins": {
-		id: 1,
-		name: 'Coins',
-		image: require('../../assets/coin.png'),
-		data: [
-			{
-				name: '10',
-				image: require('../../assets/10.png'),
-				value: 10
-
-			},
-			{
-				name: '25',
-				image: require('../../assets/25.png'),
-				value: 25
-			},
-			{
-				name: '50',
-				image: require('../../assets/50.png'),
-				value: 50
-			},
-			{
-				name: '100',
-				image: require('../../assets/100.png'),
-				value: 100
-			},
-		],
-	},
 	"cash": {
 		id: 2,
 		name: 'Cash',

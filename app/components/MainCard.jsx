@@ -29,16 +29,6 @@ const MainCard = ({ item }) => {
 				},
 				total: wallet.total + (value * eur)
 			});
-		} else if (tab === 'coins') {
-			setWallet({
-				...wallet,
-				[tab]: {
-					...wallet[tab],
-					[item?.value]: wallet[tab][item?.value] + (value * 0.01),
-					total: wallet[tab].total + (value * 0.01)
-				},
-				total: wallet.total + (value * 0.01)
-			});
 		} else {
 			setWallet({
 				...wallet,
@@ -77,17 +67,6 @@ const MainCard = ({ item }) => {
 					total: wallet[tab].total - (value * eur)
 				},
 				total: wallet.total - (value * eur)
-			});
-		} else if (tab === 'coins') {
-			// 1 coins = 0.01 TL
-			setWallet({
-				...wallet,
-				[tab]: {
-					...wallet[tab],
-					[item?.value]: wallet[tab][item?.value] - (value * 0.01),
-					total: wallet[tab].total - (value * 0.01)
-				},
-				total: wallet.total - (value * 0.01)
 			});
 		} else {
 			setWallet({
