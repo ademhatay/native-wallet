@@ -3,7 +3,7 @@
 This is a native wallet for the small econmy management system.
 
 ## Video
-- link
+- https://www.youtube.com/shorts/h8bf4zv0-18
 
 ## Features
 - [x] Daily currency exchange rate
