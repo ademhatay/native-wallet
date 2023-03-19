@@ -6,34 +6,104 @@ import { useGeneralContext } from '../contexts/GeneralContext';
 
 
 const MainCard = ({ item }) => {
-	const { tab, wallet, setWallet } = useGeneralContext();
+	const { tab, wallet, setWallet, usd, eur } = useGeneralContext();
 
 	const addMoney = (value) => {
-		setWallet({
-			...wallet,
-			[tab]: {
-				...wallet[tab],
-				[item?.value]: wallet[tab][item?.value] + value,
-				total: wallet[tab].total + value
-			},
-			total: wallet.total + value
-		});
+		if (tab === 'dollar') {
+			setWallet({
+				...wallet,
+				[tab]: {
+					...wallet[tab],
+					[item?.value]: wallet[tab][item?.value] + value,
+					total: wallet[tab].total + (value * usd)
+				},
+				total: wallet.total + (value * usd)
+			});
+		} else if (tab === 'euro') {
+			setWallet({
+				...wallet,
+				[tab]: {
+					...wallet[tab],
+					[item?.value]: wallet[tab][item?.value] + value,
+					total: wallet[tab].total + (value * eur)
+				},
+				total: wallet.total + (value * eur)
+			});
+		} else if (tab === 'coins') {
+			setWallet({
+				...wallet,
+				[tab]: {
+					...wallet[tab],
+					[item?.value]: wallet[tab][item?.value] + (value * 0.01),
+					total: wallet[tab].total + (value * 0.01)
+				},
+				total: wallet.total + (value * 0.01)
+			});
+		} else {
+			setWallet({
+				...wallet,
+				[tab]: {
+					...wallet[tab],
+					[item?.value]: wallet[tab][item?.value] + value,
+					total: wallet[tab].total + value
+				},
+				total: wallet.total + value
+			});
+		}
 	}
+
+
 
 	const removeMoney = (value) => {
 		if (wallet[tab][item?.value] === 0) {
 			return;
 		}
-		setWallet({
-			...wallet,
-			[tab]: {
-				...wallet[tab],
-				[item?.value]: wallet[tab][item?.value] - value,
-				total: wallet[tab].total - value
-			},
-			total: wallet.total - value
-		});
+		if (tab === 'dollar') {
+			setWallet({
+				...wallet,
+				[tab]: {
+					...wallet[tab],
+					[item?.value]: wallet[tab][item?.value] - value,
+					total: wallet[tab].total - (value * usd)
+				},
+				total: wallet.total - (value * usd)
+			});
+		} else if (tab === 'euro') {
+			setWallet({
+				...wallet,
+				[tab]: {
+					...wallet[tab],
+					[item?.value]: wallet[tab][item?.value] - value,
+					total: wallet[tab].total - (value * eur)
+				},
+				total: wallet.total - (value * eur)
+			});
+		} else if (tab === 'coins') {
+			// 1 coins = 0.01 TL
+			setWallet({
+				...wallet,
+				[tab]: {
+					...wallet[tab],
+					[item?.value]: wallet[tab][item?.value] - (value * 0.01),
+					total: wallet[tab].total - (value * 0.01)
+				},
+				total: wallet.total - (value * 0.01)
+			});
+		} else {
+			setWallet({
+				...wallet,
+				[tab]: {
+					...wallet[tab],
+					[item?.value]: wallet[tab][item?.value] - value,
+					total: wallet[tab].total - value
+				},
+				total: wallet.total - value
+			});
+		}
 	}
+
+
+
 	return <>
 		<View className="item-card w-1/3 h-36 py-2 mx-2 my-2 rounded-xl items-center justify-evenly border-2">
 			<Image className="w-20 h-20" source={item?.image} />
